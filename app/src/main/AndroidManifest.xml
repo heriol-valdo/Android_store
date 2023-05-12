@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+
+        <!-- gestion du manifest. -->
+
+        <!-- declaration des classes des activites des SQL_Lite. -->
+        <activity
+            android:name=".SQL_Lite.ListUser_.ListUser"
+            android:exported="false"
+            android:label="@string/title_activity_list_user"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SQL_Lite.MainActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SECONDARY_HOME" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SQL_Lite.ListUser_.DetailsActivity"
+            android:label="Details Activity" />
+
+        <!-- point d'entrer de l'application passant par SQL_lite. -->
+        <activity
+             android:name=".SQL_Lite.Authentification.AuthentificationActivity"
+            android:label=" Authentification User"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SECONDARY_HOME" />
+            </intent-filter>
+        </activity>
+
+
+
+
+
+        <!-- Declaration des classes des Activites de php. -->
+        <activity
+            android:exported="true"
+            android:name=".PHP.MainActivityPHP"
+            android:label="MainActivityPHP">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PHP.ListUser_.ListUserPHP"
+            android:label="Listes des User PHP"></activity>
+
+        <activity
+            android:name=".PHP.ListUser_.DetailsActivityPHP"
+            android:label="Details User PHP">
+
+        </activity>
+
+
+
+
+
+
+        <!-- point d'entrer de l'application passant par PHP. -->
+        <activity
+            android:name=".PHP.Authentification.AuthentificationActivityPHP"
+            android:label=" Authentification User PHP"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SECONDARY_HOME" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
